@@ -1,0 +1,16 @@
+[
+{
+  "modid": "CoFHLib",
+  "name": "CoFH Lib",
+  "description": "Core Library for CoFH. This is an early alpha port.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://teamcofh.com/downloads/",
+  "updateUrl": "",
+  "authorList": ["gameofblocks"],
+  "credits": "The CoFH Team and anyone else deserving (maybe me, not sure)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
