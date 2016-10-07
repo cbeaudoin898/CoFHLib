@@ -1,0 +1,15 @@
+Changelog (NOT exhaustive):
+Replaced old forge methods & import locations with new equivalents where needed. (eg BlockPos, StatCollector to I18n)
+Updated to new forge methods using the dual-wield checks
+Added methods of off hand item interaction to most classes.
+Commented out Potion ingredient check in the container class - can't find the new way to check that in the API.
+Removed (temporarily) the getProfile method in SecurityHelper. Am going to implement a helper for reading in the usercache.json, then add it back. preYggdrasilConverter has been pruned back, need to start interrogating the usercache directly for UUID, name and use that to retrieve profiles & whatnot.
+Changed particle render from EntityFX subclass to Particle. Now needs xyz speed vector as well, so might not behave correctly (yet). I'll test it while I'm working on other stuff. Ground collision check is also gone, just added general collsion check.
+Changed the sendItemUsePacket() method, now just returns. Packet classes & methods are changed, issue might not exist. If it does, will rework to use new methods.
+
+TODO:
+Many deprecated methods in use, like the I18n function that replaced StatCollector. Lot's of the Fluid related stuff too. 
+Add helper for reading usercache.json to get user names, UUID's and therefore gameprofiles.
+Check particle effects.
+Find out how to check if an item is a potion ingredient. PotionHelper has a isReagent method. 
+Feedback desired: I like having seperate methods to check main/offhand as I thing it's a bit clearer and you might want different behaviors based on which hand is being checked (eg a wrench in main hand turns the block, in offhand picks it up) - but it means you might need to check both methods a lot of the time. Or just ignore it altogether, and only check the main hand (same method names as 1.7.10) if that's what you prefer :). Either way, let me know.
